@@ -11,5 +11,10 @@ export class SiderbarComponent implements OnInit {
 
   ngOnInit() {
   }
+  openMobileNav(){
+    document.getElementsByTagName('body')[0].classList.toggle('mobile-nav-active');
+    document.getElementsByClassName('mobile-nav-toggle')[0].classList.toggle('bi-list');
+    document.getElementsByClassName('mobile-nav-toggle')[0].classList.toggle('bi-x');
+  }
 
 }
