@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-siderbar',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SiderbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private currentRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.currentRoute.snapshot.url.join('/'))
   }
   openMobileNav(){
     document.getElementsByTagName('body')[0].classList.toggle('mobile-nav-active');
