@@ -16,28 +16,30 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
   ) { }
 
   ngOnInit() {
-    const options = {
-      root: null, // Use the viewport as the root
-      rootMargin: '0px',
-      threshold: 0.5 // 50% visibility triggers the callback
-    };
-  
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const targetId = entry.target.getAttribute('id');
-          this.setActiveLink(targetId || ''); 
-        }
+    if (isPlatformBrowser(this.platformId)) {
+      const options = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.5 // 50% visibility triggers the callback
+      };
+    
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const targetId = entry.target.getAttribute('id');
+            this.setActiveLink(targetId || ''); 
+          }
+        });
+      }, options);
+    
+      // Get all the sections/elements in the sidebar you want to observe
+      const sections = document.querySelectorAll('.page-segment');
+    
+      // Observe each section
+      sections.forEach((section) => {
+        observer.observe(section);
       });
-    }, options);
-  
-    // Get all the sections/elements in the sidebar you want to observe
-    const sections = document.querySelectorAll('.page-segment');
-  
-    // Observe each section
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
+    }
   }
   ngOnChanges(){
     this.isDocumentLoaded = isPlatformBrowser(this.platformId);
