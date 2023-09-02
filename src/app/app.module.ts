@@ -10,6 +10,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { SkillsComponent } from './pages/skills/skills.component';
 import { ResumeComponent } from './pages/resume/resume.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { LoadingService } from './common/services/loader.service';
+import { LoaderComponent } from './common/components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     AboutComponent,
     SkillsComponent,
     ResumeComponent,
-    ContactComponent
+    ContactComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -27,7 +30,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     NgxTypedJsModule
   ],
   providers: [
-
+    LoadingService
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]

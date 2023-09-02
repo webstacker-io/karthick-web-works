@@ -1,0 +1,16 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm install --force
+    - npm run build:ssr
+
+deploy:
+  stage: deploy
+  script:
+    - curl -X POST -d {} "https://api.netlify.com/build_hooks/64f34dddfca838086b422c91"
+  only:
+    - master # or whichever branch you want to trigger deployment from

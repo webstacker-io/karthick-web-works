@@ -1,3 +1,4 @@
 <app-siderbar></app-siderbar>
+<app-loader *ngIf="loadingService.isLoading | async"></app-loader>
 <router-outlet></router-outlet >
 
