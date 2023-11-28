@@ -12,6 +12,11 @@ import { ResumeComponent } from './pages/resume/resume.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { LoadingService } from './common/services/loader.service';
 import { LoaderComponent } from './common/components/loader/loader.component';
+import { TimelineModule } from 'primeng/timeline';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardModule } from 'primeng/card';
+import { TooltipModule } from 'primeng/tooltip';
+import { EducationComponent } from './pages/education/education.component';
 
 @NgModule({
   declarations: [
@@ -22,12 +27,17 @@ import { LoaderComponent } from './common/components/loader/loader.component';
     SkillsComponent,
     ResumeComponent,
     ContactComponent,
+    EducationComponent,
     LoaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
+    TimelineModule,
+    CardModule,
+    TooltipModule,
+    BrowserAnimationsModule
   ],
   providers: [
     LoadingService

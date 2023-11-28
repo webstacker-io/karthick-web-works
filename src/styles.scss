@@ -8,6 +8,9 @@
   /*--------------------------------------------------------------
   # General
   --------------------------------------------------------------*/
+
+    @import "primeng/resources/themes/lara-light-blue/theme.css";
+  @import "primeng/resources/primeng.css";
   body {
     font-family: "Open Sans", sans-serif;
     color: #272829;
@@ -422,7 +425,7 @@
   }
 
   /*--------------------------------------------------------------
-  # Akills
+  # Skills
   --------------------------------------------------------------*/
   .skills .progress {
     height: 60px;
@@ -496,6 +499,59 @@
     padding-bottom: 0;
   }
   .resume .resume-item::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50px;
+    left: -9px;
+    top: 0;
+    background: #fff;
+    border: 2px solid #0563bb;
+  }
+  /*--------------------------------------------------------------
+  # Resume
+  --------------------------------------------------------------*/
+  .education .resume-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #45505b;
+  }
+  .education .resume-item {
+    padding: 0 0 20px 20px;
+    margin-top: -2px;
+    border-left: 2px solid #0563bb;
+    position: relative;
+  }
+  .education .resume-item h4 {
+    line-height: 18px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #0563bb;
+    margin-bottom: 10px;
+  }
+  .education .resume-item h5 {
+    font-size: 16px;
+    background: #f7f8f9;
+    padding: 5px 15px;
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .education .resume-item ul {
+    padding-left: 20px;
+  }
+  .education .resume-item ul li {
+    padding-bottom: 10px;
+  }
+  .education .resume-item:last-child {
+    padding-bottom: 0;
+  }
+  .education .resume-item::before {
     content: "";
     position: absolute;
     width: 16px;
@@ -911,7 +967,7 @@
       margin-top: 40px;
     }
   }
- 
+
   .contact .info .email:hover i, .contact .info .address:hover i, .contact .info .phone:hover i {
     background: #0563bb;
     color: #fff;

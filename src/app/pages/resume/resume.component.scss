@@ -1,0 +1,81 @@
+.custom-marker {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 2px solid #0563bb;
+  padding: 5px 0px 3px 1px;
+  & i{
+    color:#0563bb;
+    font-size: small;
+  }
+}
+
+::ng-deep .p-card {
+  // margin-bottom: 1rem;
+  background-color: #0563bb !important;
+}
+
+::ng-deep .p-card-body,.p-card-title, .p-card-content, .p-card-subtitle {
+  line-height: 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  padding-bottom: 0rem;
+  padding-top: 0.5rem;
+  & .p-card-subtitle, .p-card-content{
+    color: white !important;
+    font-size:0.75rem;
+  }
+  & .p-card-title{
+    line-height: 1.813rem;
+    font-size:0.875rem;
+  }
+
+  & .p-card-content {
+    text-align: justify;
+    text-transform: capitalize;
+  }
+  & .p-card-subtitle {
+    padding-bottom: 0rem;
+  }
+}
+
+::ng-deep .p-timeline-event-separator{
+  color:#0563bb;
+}
+
+.p-timeline-event-connector {
+  color: #0563bb !important;
+}
+
+.filled-marker{
+  background-color: #0563bb;
+  & i{
+    color: white;
+  }
+}
+
+::ng-deep .exp-card {
+  height: 6.3rem;
+  & .ui-tooltip {
+    background-color: #0563bb !important;
+  }
+}
+
+::ng-deep .p-tooltip-text, .p-tooltip-arrow{
+  background-color: #0563bb !important;
+}
+
+@media screen and (max-width: 767px) {
+  .resume-header {
+    text-align: justify;
+  }
+}
+
+
