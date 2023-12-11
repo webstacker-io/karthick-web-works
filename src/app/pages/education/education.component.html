@@ -2,7 +2,18 @@
   <div class="row">
     <div class="col-lg-12">
       <h3 class="resume-title">Education</h3>
-      <div class="resume-item">
+      <ng-container *ngFor="let education of data">
+        <div class="resume-item">
+          <h4>{{education.name}}</h4>
+          <h5>{{education.year}}</h5>
+          <p><em>{{education.college}}</em></p>
+          <p>
+            {{education.description}}
+          </p>
+        </div>
+      </ng-container>
+
+      <!-- <div class="resume-item">
         <h4>Master of Computer Applications</h4>
         <h5>2007 - 2010</h5>
         <p><em>PSR Engineering College, Sivakasi</em></p>
@@ -21,7 +32,7 @@
           come to real and big. So start learning about the business
           administration in order to cabitalise the opportunities.
         </p>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

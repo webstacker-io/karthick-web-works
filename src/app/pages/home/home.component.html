@@ -1,8 +1,8 @@
 <section id="hero" class="d-flex flex-column justify-content-center page-segment">
   <div class="container" data-aos="zoom-in" data-aos-delay="100">
-    <h1>Karthick Kalidass</h1>
+    <h1>{{pageData.home.name}}</h1>
     <div *ngIf="isDocumentLoaded">
-      <ngx-typed-js  [strings]="['Full Stack', 'MERN Stack', 'JAM Stack', 'Front-End Angular', 'Front-End React','Coldfusion', 'Ionic']" [shuffle]="false" [typeSpeed]="80" [loop]="true" [backSpeed]="100" >
+      <ngx-typed-js  [strings]="pageData.home.skills" [shuffle]="false" [typeSpeed]="80" [loop]="true" [backSpeed]="100" >
         <span class="type-text">I'm a <span class="typing"></span> Developer</span>
       </ngx-typed-js>
     </div>
@@ -21,24 +21,24 @@
 
   <!-- ======= About Section ======= -->
   <section id="about" class="about page-segment">
-    <app-about></app-about>
+    <app-about [data]="pageData.about"></app-about>
   </section><!-- End About Section -->
 
 
 
   <!-- ======= Skills Section ======= -->
   <section id="skills" class="skills section-bg page-segment">
-    <app-skills></app-skills>
+    <app-skills [data]="pageData.skills"></app-skills>
   </section><!-- End Skills Section -->
 
    <!-- ======= Resume Section ======= -->
    <section id="education" class="education page-segment">
-    <app-education></app-education>
+    <app-education [data]="pageData.education"></app-education>
   </section><!-- End Resume Section -->
 
   <!-- ======= Resume Section ======= -->
   <section id="resume" class="resume page-segment">
-    <app-resume></app-resume>
+    <app-resume [workExperiences]="pageData.experience"></app-resume>
   </section><!-- End Resume Section -->
 
 
@@ -253,7 +253,7 @@
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact page-segment">
-    <app-contact></app-contact>
+    <app-contact [data]="pageData.contact"></app-contact>
   </section><!-- End Contact Section -->
 
 </main><!-- End #main -->

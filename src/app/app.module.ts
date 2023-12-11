@@ -17,6 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CardModule } from 'primeng/card';
 import { TooltipModule } from 'primeng/tooltip';
 import { EducationComponent } from './pages/education/education.component';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ContentService } from './common/services/content.service';
+import { AuthInterceptor } from './interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -37,13 +40,29 @@ import { EducationComponent } from './pages/education/education.component';
     TimelineModule,
     CardModule,
     TooltipModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [
-    LoadingService
+    LoadingService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: appInitializer,
+      deps: [ContentService],
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
+
+export function appInitializer(contentService: ContentService): () => Promise<any> {
+  return () => contentService.fetchData();
+}
 
