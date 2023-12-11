@@ -34,7 +34,6 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
     LoaderComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgxTypedJsModule,
     TimelineModule,
