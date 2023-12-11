@@ -31,7 +31,6 @@ import { EducationComponent } from './pages/education/education.component';
     LoaderComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NgxTypedJsModule,
     TimelineModule,
