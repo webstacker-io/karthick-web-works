@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment.dev';
-import { firstValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { createClient } from 'contentful';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContentService {
   public appData: any;
+  private client = createClient({
+    space: environment.space,
+    accessToken: environment.accessToken,
+  });
+
+
 
   constructor(private http: HttpClient) {}
 
@@ -16,8 +22,6 @@ export class ContentService {
   }
 
   async fetchData() {
-    await firstValueFrom(this.http.get(environment.apiUrl + 'api/karthickwebworks')).then((data: any) => {
-      this.appData = data;
-    });
+     await this.client.getEntry(environment.contentId).then((response: any) => this.appData = response);
   }
 }

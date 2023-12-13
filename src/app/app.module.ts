@@ -19,7 +19,6 @@ import { TooltipModule } from 'primeng/tooltip';
 import { EducationComponent } from './pages/education/education.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ContentService } from './common/services/content.service';
-import { AuthInterceptor } from './interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -49,11 +48,6 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
       useFactory: appInitializer,
       deps: [ContentService],
       multi: true
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
     }
   ],
   bootstrap: [AppComponent],
@@ -61,7 +55,7 @@ import { AuthInterceptor } from './interceptors/auth-interceptor';
 })
 export class AppModule { }
 
-export function appInitializer(contentService: ContentService): () => Promise<any> {
-  return () => contentService.fetchData();
+export function appInitializer(dataService: ContentService): () => Promise<any> {
+  return () => dataService.fetchData();
 }
 

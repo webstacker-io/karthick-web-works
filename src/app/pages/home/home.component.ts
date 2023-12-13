@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnChanges {
           private renderer: Renderer2,
           private contentService: ContentService
   ) {
-    this.pageData = this.contentService.getAppData().data[0].attributes;
+    this.pageData = this.contentService.getAppData().fields.pageData;
   }
 
   ngOnInit() {
