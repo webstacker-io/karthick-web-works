@@ -1,5 +1,3 @@
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:1337/',
-  apiToken: 'f7c2aeeaa7598375b4af69ae55faaac9d8cbb8ac7d52cef58f821885693018ca20234e45837c45d3594e736a47b6b0a4563c595fa6820d751f71db3446e8f201be8055baacc420f6f7b92266a1aa0be447ea509495165cf412bfc3695e65cb14af3121c9995f05483c23ebe7ad5cb367b536295540fff7f78ba2575018e7432b'
 };
